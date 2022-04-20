@@ -64,7 +64,7 @@ def wishMe():
         speak("the time is")
         speak(hour)
         speak(min)
-        speak("i m feeling sleepy sir i hope you are also feeling that")
+        speak("i m feeling sleepy sir , i hope you are also feeling that")
 
        
        
@@ -102,7 +102,7 @@ def takeCommand():
         return  query.lower()
 
 def taskExe():
-    speak('what you want me to do sir?')
+    speak('which task you , want to perform sir?')
 
     while True:
 
@@ -189,6 +189,15 @@ def taskExe():
         elif 'volume control' in query:
             speak("wait a second sir!")
             volumeControl()
+
+        elif "change voice" in  query:
+            speak("for female say female and , for man say men")
+            w = takeCommand()
+            
+            if "female" in w:
+                voiceChange(8)
+            elif "men" in w:
+                voiceChange(1)
 
 
 def whatsapp():
@@ -429,7 +438,7 @@ def keyboardCommands():
 
      elif 'back' in comm:
       keyboard.press('j')
-
+ 
     
 def openCamera():
 
@@ -471,11 +480,21 @@ def setAlarm():
                     break
 
 
+def voiceChange(v):
+    x = int(v)
+    assistant.setProperty('voice', voices[x].id)
+    speak("Voice is changed sir!")
+    
+
+
+
+
 speak("hello sir")
-speak("tell me what can i do for you?")
+speak("i am online")
 order = takeCommand()
 
 
-if 'listen' in order:
+if "hello" in order:
+    speak("Hello sir, tell me what can i do for you?")
     taskExe()
     
