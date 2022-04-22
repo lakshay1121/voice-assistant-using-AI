@@ -199,6 +199,9 @@ def taskExe():
             elif "men" in w:
                 voiceChange(1)
 
+        elif "shutdown" in query:
+            shutDown()
+
 
 def whatsapp():
     
@@ -484,7 +487,21 @@ def voiceChange(v):
     x = int(v)
     assistant.setProperty('voice', voices[x].id)
     speak("Voice is changed sir!")
-    
+
+
+def shutDown():
+    speak("wait a second sir!")
+    time.sleep(3)
+    pyautogui.click(x=818 , y=1042)
+    time.sleep(3)
+    pyautogui.click(x=1276, y=975)
+    time.sleep(3)
+    pyautogui.click(x=1265, y=868)
+    time.sleep(3)
+    pyautogui.click(x=1265, y=868)
+    speak("Done sir!")
+
+
 
 
 
