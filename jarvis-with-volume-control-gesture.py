@@ -201,6 +201,7 @@ def taskExe():
 
         elif "shutdown" in query:
             shutDown()
+            break
 
 
 def whatsapp():
